@@ -1,10 +1,10 @@
 # .config
 Repo of dotfiles
 
-Inspired by:
+Inspired by: \
 https://dev.to/pratik_kale/customise-your-terminal-using-zsh-powerlevel10k-1og5 \
 https://github.com/ChristianChiarulli/Machfiles/blob/master/zsh/.zshrc \
-https://www.youtube.com/watch?v=bTLYiNvRIVI&ab_channel=ChrisAtMachine \
+https://www.youtube.com/watch?v=bTLYiNvRIVI&ab_channel=ChrisAtMachine
 
 .zshrc to have:
 Powerlevel10k
