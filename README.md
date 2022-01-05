@@ -16,3 +16,6 @@ Going to avoid using Oh-my-zsh. Don't need most of the plug-ins and can manage m
 
 # .p10k
 My customised p10k config
+
+# .gitconfig
+Containing all the good git stuff
