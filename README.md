@@ -15,10 +15,21 @@ keychain \
 
 Going to avoid using Oh-my-zsh. Don't need most of the plug-ins and can manage my computer more cleanly this way :)
 
-Could setup two separate ssh keys for linux and Windows for wsl, but feels a bit redundant.
-
 # .p10k
 My customised p10k config
 
 # .gitconfig
 Containing all the good git stuff
+
+# Autocopy SSH keys for WSL
+Script to automatically copy the .ssh folder and change permissions to 600 for keys on detecting folder in linux
+
+Logic:
+```
+if [ -d ~.ssh ] || [ -d /mnt/c/Users/xxx/.ssh ]; then 
+    cp -r /mnt/c/Users/xxx/.ssh ~/.ssh
+    cd ~/.ssh
+    foreach {$file in $filename.*}
+        chmod 600 ~/.ssh/id_ed25519
+    done
+fi
