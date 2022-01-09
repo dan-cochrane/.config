@@ -24,6 +24,8 @@ Containing all the good git stuff
 # Autocopy SSH keys for WSL
 Script to automatically copy the .ssh folder and change permissions to 600 for keys on detecting folder in linux
 
+# Update settings.json for WSL
+
 Logic:
 ```
 if [ -d ~.ssh ] || [ -d /mnt/c/Users/xxx/.ssh ]; then 
