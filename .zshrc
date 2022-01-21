@@ -14,9 +14,11 @@ HISTFILE=~/.zsh_history
 setopt autocd extendedglob nomatch menucomplete
 setopt interactive_comments
 zle_highlight=('paste:none')
-
-# beeping is annoying
 unsetopt BEEP
+
+# ctrl arrow keys work like bash
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 
 # completions
 autoload -Uz compinit
