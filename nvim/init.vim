@@ -11,3 +11,4 @@ set number
 set relativenumber
 set cursorline
 set noswapfile
+" set mouse=a
