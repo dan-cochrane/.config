@@ -14,4 +14,8 @@ set noswapfile
 
 call plug#begin()
 Plug 'https://github.com/vim-airline/vim-airline'
+Plug 'https://github.com/preservim/nerdtree'
+Plug 'https://github.com/tpope/vim-fugitive'
+Plug 'https://github.com/tpope/vim-surround'
+Plug 'https://github.com/vim-airline/vim-airline-themes'
 call plug#end()
