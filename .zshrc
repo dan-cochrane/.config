@@ -50,6 +50,10 @@ alias gb="git branch"
 alias gup="git fetch && git rebase"
 alias grhh="git reset HEAD --hard"
 
+# general aliases
+alias c="clear"
+alias vm="ssh -t danc@danc.dev-vms.speechmatics.io 'zsh -l'"
+
 # source themes and plugins
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
