@@ -37,6 +37,15 @@ zle -N down-line-or-beginning-search
 # Colors
 autoload -Uz colors && colors
 
+# git aliases
+alias g="git"
+alias gl="git pull"
+alias gp="git push"
+alias gcm="git checkout master"
+alias gba="git branch -a"
+alias ga="git add"
+alias gs="git status"
+alias gc="git commit -m"
 
 # source themes and plugins
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
