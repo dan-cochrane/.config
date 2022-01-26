@@ -46,6 +46,9 @@ alias gba="git branch -a"
 alias ga="git add"
 alias gs="git status"
 alias gc="git commit -m"
+alias gb="git branch"
+alias gup="git fetch && git rebase"
+alias grhh="git reset HEAD --hard"
 
 # source themes and plugins
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
