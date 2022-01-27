@@ -19,6 +19,7 @@ Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/tpope/vim-surround'
 Plug 'https://github.com/vim-airline/vim-airline-themes'
 Plug 'tomasiser/vim-code-dark'
+Plug 'neoclide/coc.nvim'
 call plug#end()
 
 " colour scheme
