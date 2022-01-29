@@ -1,1 +1,0 @@
--- require('dpc46.pluginname')

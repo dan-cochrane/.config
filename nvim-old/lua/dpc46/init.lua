@@ -1,0 +1,3 @@
+-- require('dpc46.pluginname')
+-- install language servers individually
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md

@@ -30,7 +30,7 @@ Plug 'https://github.com/neovim/nvim-lspconfig'
 call plug#end()
 
 " -- Lua configs
-
+lua require('dpc46')
 
 
 " -- Colour scheme
