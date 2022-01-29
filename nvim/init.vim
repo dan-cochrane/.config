@@ -29,5 +29,9 @@ Plug 'https://github.com/neovim/nvim-lspconfig'
 
 call plug#end()
 
-" colour scheme
+" -- Lua configs
+
+
+
+" -- Colour scheme
 colorscheme codedark
