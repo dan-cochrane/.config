@@ -40,6 +40,6 @@ luac.out
 *.hex
 
 # Configstore
-/Configstore
+configstore
 
 plugin/packer_compiled.lua
