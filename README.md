@@ -21,6 +21,10 @@ My customised p10k config
 # .gitconfig
 Containing all the good git stuff
 
+# Neovim
+Using the LunarVim configuration.
+Neovim nightly, installed as an app image (chmod +x, mv nvim.appimage nvim, mv nvim /usr/local/bin/)
+
 # Autocopy SSH keys for WSL
 Script to automatically copy the .ssh folder and change permissions to 600 for keys on detecting folder in linux
 

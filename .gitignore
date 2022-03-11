@@ -1,0 +1,5 @@
+# ignore files
+packer_compiled.lua
+nvim.appimage
+Ignore squashfs-root/
+nvim/nvim
