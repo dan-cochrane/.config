@@ -46,12 +46,12 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
   use "windwp/nvim-autopairs" -- Autopairs, integrates with both cmp and treesitter
   use "numToStr/Comment.nvim" -- Easily comment stuff
-  use "kyazdani42/nvim-web-devicons"
-  use "kyazdani42/nvim-tree.lua"
-  use "akinsho/bufferline.nvim"
-  use "moll/vim-bbye"
-  use "nvim-lualine/lualine.nvim"
-  use "akinsho/toggleterm.nvim"
+  use "kyazdani42/nvim-web-devicons" -- Nice icons
+  use "kyazdani42/nvim-tree.lua" -- Enable the nice tree to the left
+  use "akinsho/bufferline.nvim" -- Handles the tab-like buffers
+  use "moll/vim-bbye" -- Shut buffer without closing window
+  use "nvim-lualine/lualine.nvim" -- Airline like info bar at bottom of screen
+  use "akinsho/toggleterm.nvim" -- Creates a terminal buffer without exiting nvim
   use "ahmedkhalf/project.nvim"
   use "lewis6991/impatient.nvim"
   use "lukas-reineke/indent-blankline.nvim"
@@ -59,8 +59,7 @@ return packer.startup(function(use)
   use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
   use "folke/which-key.nvim"
 
-  -- Colorschemes
-  -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
+  -- Colourschemes
   use "lunarvim/darkplus.nvim"
 
   -- cmp plugins
