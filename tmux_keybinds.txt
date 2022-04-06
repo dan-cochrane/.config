@@ -8,6 +8,8 @@ bind-key    -T prefix       c                     new-window -c "#{pane_current_
 bind-key    -T prefix       &                     confirm-before -p "kill-window #W? (y/n)" kill-window
 bind-key    -T prefix       ,                     command-prompt -I "#W" "rename-window -- '%%'"
 bind-key    -T prefix       C-a                   last-window
+bind-key    -T prefix       n                     next-window
+bind-key    -T prefix       p                     previous-window
 
 # panes
 bind-key    -T prefix       -                     split-window -c "#{pane_current_path}" -p 50
@@ -20,6 +22,11 @@ bind-key    -T prefix       x                     confirm-before -p "kill-pane #
                             C-k                   select-pane -U
                             C-l                   select-pane -R
 
+bind-key    -T prefix       h                     select-pane -L
+bind-key    -T prefix       j                     select-pane -D
+bind-key    -T prefix       k                     select-pane -U
+bind-key    -T prefix       l                     select-pane -R
+bind-key    -T prefix       m                     select-pane -m
 bind-key    -T prefix       e                     set-window-option synchronize-panes on
 bind-key    -T prefix       E                     set-window-option synchronize-panes off
 bind-key -r -T prefix       H                     resize-pane -L 5
@@ -38,14 +45,6 @@ bind-key    -T prefix       ]                     paste-buffer
 bind-key    -T prefix       d                     detach-client
 bind-key    -T prefix       f                     command-prompt "find-window -Z -- '%%'"
 bind-key    -T prefix       i                     display-message
-bind-key    -T prefix       h                     select-pane -L
-bind-key    -T prefix       j                     select-pane -D
-bind-key    -T prefix       k                     select-pane -U
-bind-key    -T prefix       l                     select-pane -R
-bind-key    -T prefix       m                     select-pane -m
-bind-key    -T prefix       n                     next-window
-bind-key    -T prefix       o                     select-pane -t :.+
-bind-key    -T prefix       p                     previous-window
 bind-key    -T prefix       q                     display-panes
 bind-key    -T prefix       r                     source-file /home/dpc46/.tmux.conf \; display-message Reloaded!
 bind-key    -T prefix       t                     clock-mode
