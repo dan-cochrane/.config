@@ -52,7 +52,7 @@ alias grhh="git reset HEAD --hard"
 
 # general aliases
 alias c="clear"
-alias vm="ssh -t danc@danc.dev-vms.speechmatics.io 'zsh -l'"
+alias vm="ssh -t danc@danc.dev-vms.speechmatics.io"
 
 # source themes and plugins
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
