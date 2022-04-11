@@ -1,12 +1,8 @@
 # Neovim
-Using the LunarVim configuration.
-Neovim nightly, installed as an app image (chmod +x, mv nvim.appimage nvim, mv nvim /usr/local/bin/)
 
-## Keymaps
+# Keymaps
 
-### Neovim
-
-
+## Neovim
 
 ### lsp
 
@@ -19,31 +15,38 @@ gr - go to references \
 
 ### nvim-lsp-installer
 
-<enter> - expand server \
+enter - expand server \
 i - install server \
 u - update server \
 U - update all servers \
 X - uninstall server 
 
-### tmux
+## tmux
 
-` - prefix \
+` - prefix
+
+### window commands
 c - create new window \
-n/p - move to next/previous window \
-0-9 - move to window number 0-9 \
-l - move to previously selected window \
-f - find window by name \
-w - menu with all windows \
 & - kill current window \
-, - rename window \
-% - split window, adding a vertical pane to the right \
-" - split window, adding an horizontal pane below \
+0-9 - move to window number 0-9 \
+n/p - move to next/previous window \
+w - menu with all windows \
+, - rename window
+
+### pane commands
+Note I don't move with ctrl + vim, it interferes with my neovim buffers/explorer
+| - split vertically \
+- - split horizontally \
+x - Kill the current pane. \
+h - move to left pane \
+j - move to lower pane \
+k - move to upper pane \
+l - move to right pane \
 q - show pane numbers (used to switch between panes) \
 o - switch to the next pane \
-?/? - move focus to left/right pane \
-?/? - move focus to upper/lower pane \
-! - Break current pane into new window \
-x - Kill the current pane. \
+! - Break current pane into new window
+
+### general
 d - detach the current client \
-? - list all keybindings \
-? - show tmux key bindings
+? - list all keybindings 
+
