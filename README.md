@@ -25,8 +25,9 @@ u - update server \
 U - update all servers \
 X - uninstall server 
 
-# tmux
+### tmux
 
+` - prefix \
 c - create new window \
 n/p - move to next/previous window \
 0-9 - move to window number 0-9 \
