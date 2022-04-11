@@ -34,9 +34,11 @@ w - menu with all windows \
 , - rename window
 
 ### pane commands
+
 Note I don't move with ctrl + vim, it interferes with my neovim buffers/explorer
+
 | - split vertically \
-- - split horizontally \
+\- - split horizontally \
 x - Kill the current pane. \
 h - move to left pane \
 j - move to lower pane \
