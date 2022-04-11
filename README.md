@@ -15,7 +15,7 @@ gD - go to global declaration \
 gi - get implementation \
 gl - get line diagnostics \
 gr - go to references \
-]d - go to next diagnostic \
+]d - go to next diagnostic
 
 ### nvim-lsp-installer
 
@@ -23,7 +23,7 @@ gr - go to references \
 i - install server \
 u - update server \
 U - update all servers \
-X - uninstall server  \
+X - uninstall server 
 
 # tmux
 
@@ -45,4 +45,4 @@ o - switch to the next pane \
 x - Kill the current pane. \
 d - detach the current client \
 ? - list all keybindings \
-? - show tmux key bindings \
+? - show tmux key bindings
