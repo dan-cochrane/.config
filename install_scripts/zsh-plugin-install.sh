@@ -10,9 +10,3 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-sy
 # clone the .config repo
 [ -d ~/.config ] && mv ~/.config ~/.config_old
 git clone git@github.com:dpc46/.config.git
-
-# install the latest stable nvim release and add to path
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-chmod u+x nvim.appimage
-./nvim.appimage
-sudo ln -s ~/nvim.appimage /usr/bin/nvim
