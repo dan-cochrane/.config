@@ -37,6 +37,7 @@ echo "deploying on $LOC machine..."
 echo "source $DOT_DIR/config/tmux.conf" > $HOME/.tmux.conf
 
 # Vimrc
+# With Neovim, reads from an init.vim or init.lua file in ~/.config/nvim
 if [[ $VIM == "true" ]]; then
     echo "deploying .vimrc"
     echo "source $DOT_DIR/config/vimrc" > $HOME/.vimrc
