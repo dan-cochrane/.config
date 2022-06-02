@@ -1,8 +1,9 @@
 ## Dotfile management
 - Write shell scripts for configs (tmux, zshrc, etc)
 - Write set-up script for sourcing shell script to relevant dotfile
+- Install/deploy scripts to run the set-up scripts and install nvim
 - Symlink the sm-dotfiles repo into the .configs file
-  - need to only Symlink the non-tmux and nvim configs
+    - need to only Symlink the non-tmux and nvim configs
 
 ## nvim
 
