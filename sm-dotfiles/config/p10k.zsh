@@ -1660,38 +1660,6 @@
   typeset -g POWERLEVEL9K_TIME_VISUAL_IDENTIFIER_EXPANSION=
   # Custom prefix.
   # typeset -g POWERLEVEL9K_TIME_PREFIX='at '
-  ------> Add 'singularity' to the POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS < --------
-  typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
-      # =========================[ Line #1 ]=========================
-      status                  # exit code of the last command
-      command_execution_time  # duration of the last command
-      background_jobs         # presence of background jobs
-      direnv                  # direnv status (https://direnv.net/)
-      asdf                    # asdf version manager (https://github.com/asdf-vm/asdf)
-      virtualenv              # python virtual environment (https://docs.python.org/3/library/venv.html)
-      singularity             # ADD THIS LINE HERE <-------
-  
-  .......
-  
-  ------> # Add the prompt_singularity() function beneath the prompt example section (shown below) of p10k.zsh < --------
-  # Example of a user-defined prompt segment. Function prompt_example will be called on every
-  # prompt if xampleprompt segment is added to POWERLEVEL9K_LEFT_PROMPT_ELEMENTS or
-  # POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS. It displays an icon and orange text greeting the user.
-  #
-  # Type 10k help segmentfor documentation and a more sophisticated example.
-  function prompt_example() {
-  p10k segment -f 208 -i '⭐' -t 'hello, %n'
-  }
-  
-  ADD THIS FUNCTION HERE --------> 
-    function prompt_singularity() {
-      if [ ! -z "$SINGULARITY_CONTAINER" ]; then
-        name=$(echo ${SINGULARITY_CONTAINER} | awk -F/ '{print $(NF-0)}')
-        p10k segment -f 031 -i '💫' -t "${name}"
-      fi
-    }
-
-  
 
   # Example of a user-defined prompt segment. Function prompt_example will be called on every
   # prompt if `example` prompt segment is added to POWERLEVEL9K_LEFT_PROMPT_ELEMENTS or
