@@ -54,30 +54,27 @@ elif [ $machine == "Mac" ]; then
     [ $tmux == true ] && brew install tmux
 fi
 
-# Setting up oh my zsh and oh my zsh plugins
-ZSH=~/.oh-my-zsh
-ZSH_CUSTOM=$ZSH/custom
+ZSH=~/.zsh
 if [ -d $ZSH ] && [ "$force" = "false" ]; then
     echo "Skipping download of oh-my-zsh and related plugins, pass --force to force redeownload"
 else
     echo " --------- INSTALLING DEPENDENCIES ⏳ ----------- "
-    rm -rf $ZSH
-    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+    rm -rf $ZSH && mkdir $ZSH
 
-    git clone https://github.com/romkatv/powerlevel10k.git \
-        ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k 
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
+        ${ZSH:-~/.zsh}/powerlevel10k 
 
     git clone https://github.com/zsh-users/zsh-syntax-highlighting.git \
-        ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting 
+        ${ZSH:-~/.zsh}/zsh-syntax-highlighting 
 
     git clone https://github.com/zsh-users/zsh-autosuggestions \
-        ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions 
+        ${ZSH:-~/.zsh}/zsh-autosuggestions 
 
     git clone https://github.com/zsh-users/zsh-completions \
-        ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions 
+        ${ZSH:-~/.zsh}/zsh-completions 
 
     git clone https://github.com/zsh-users/zsh-history-substring-search \
-        ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search 
+        ${ZSH:-~/.zsh}/zsh-history-substring-search 
     
     echo " --------- INSTALLED SUCCESSFULLY ✅ ----------- "
     echo " --------- NOW RUN ./deploy.sh [OPTION] -------- "
