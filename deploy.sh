@@ -7,7 +7,7 @@ USAGE=$(cat <<-END
 
     OPTIONS:
         --local                 deploy local config only, only common aliases are sourced
-        --vim                   deploy very simple vimrc config 
+        --vim                   deploy very simple vimrc config
 END
 )
 
@@ -36,7 +36,6 @@ echo "deploying on $LOC machine..."
 # Tmux setup
 echo "source $DOT_DIR/config/tmux.conf" > $HOME/.tmux.conf
 
-# Vimrc
 # With Neovim, reads from an init.vim or init.lua file in ~/.config/nvim
 if [[ $VIM == "true" ]]; then
     echo "deploying .vimrc"
@@ -46,7 +45,16 @@ fi
 # zshrc setup
 echo "source $DOT_DIR/config/zshrc.sh" > $HOME/.zshrc
 # conifg/aliases_speechmatics.sh adds remote specific aliases and cmds
-[ $LOC = 'remote' ] &&  echo \
+[ $LOC = 'remote' ] && echo \
     "source $DOT_DIR/config/aliases_speechmatics.sh" >> $HOME/.zshrc
 
 zsh
+
+# nvm setup
+NVM_SETUP=$(cat <<-END
+    export NVM_DIR="$HOME/.nvm"
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+    [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+END
+)
+    echo $NVM_SETUP >> $HOME/.zshrc
