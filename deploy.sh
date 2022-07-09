@@ -21,8 +21,6 @@ while (( "$#" )); do
             echo "$USAGE" && exit 1 ;;
         --local)
             LOC="local" && shift ;;
-        --vim)
-            VIM="true" && shift ;;
         --) # end argument parsing
             shift && break ;;
         -*|--*=) # unsupported flags
@@ -33,22 +31,16 @@ done
 
 echo "deploying on $LOC machine..."
 
-# Tmux setup
+# tmux setup
 echo "source $DOT_DIR/config/tmux.conf" > $HOME/.tmux.conf
-
-# With Neovim, reads from an init.vim or init.lua file in ~/.config/nvim
-if [[ $VIM == "true" ]]; then
-    echo "deploying .vimrc"
-    echo "source $DOT_DIR/config/vimrc" > $HOME/.vimrc
-fi
 
 # zshrc setup
 echo "source $DOT_DIR/config/zshrc.sh" > $HOME/.zshrc
-# conifg/aliases_speechmatics.sh adds remote specific aliases and cmds
-[ $LOC = 'remote' ] && echo \
-    "source $DOT_DIR/config/aliases_speechmatics.sh" >> $HOME/.zshrc
 
-zsh
+# add remote specific aliases for vm
+if [ $LOC = 'remote' ]; then
+    echo "source $DOT_DIR/config/aliases_speechmatics.sh" >> $HOME/.zshrc
+fi
 
 # nvm setup
 NVM_SETUP=$(cat <<-END
@@ -57,4 +49,6 @@ NVM_SETUP=$(cat <<-END
     [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 END
 )
-    echo $NVM_SETUP >> $HOME/.zshrc
+echo "$NVM_SETUP" >> $HOME/.zshrc
+
+zsh
