@@ -16,6 +16,7 @@ END
 zsh=false
 tmux=false
 force=false
+nvm=false
 while (( "$#" )); do
     case "$1" in
         -h|--help)
@@ -24,6 +25,8 @@ while (( "$#" )); do
             zsh=true && shift ;;
         --tmux)
             tmux=true && shift ;;
+        --nvm)
+            nvm=true && shift ;;
         --force)
             force=true && shift ;;
         --) # end argument parsing
@@ -54,9 +57,19 @@ elif [ $machine == "Mac" ]; then
     [ $tmux == true ] && brew install tmux
 fi
 
+# install nvm
+NVM=~/.nvm
+if [ -d $NVM ] && [ "$force" == "false" ]; then
+    echo "Skipping download of nvm, pass --force to force the download"
+else
+    git clone https://github.com/nvm-sh/nvm.git ~/.nvm && cd ~/.nvm && git checkout v0.39.1
+fi
+
+
+# install zsh plugins
 ZSH=~/.zsh
 if [ -d $ZSH ] && [ "$force" = "false" ]; then
-    echo "Skipping download of oh-my-zsh and related plugins, pass --force to force redeownload"
+    echo "Skipping download of zsh plugins, pass --force to force redeownload"
 else
     echo " --------- INSTALLING DEPENDENCIES ⏳ ----------- "
     rm -rf $ZSH && mkdir $ZSH
