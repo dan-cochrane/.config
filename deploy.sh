@@ -44,6 +44,7 @@ fi
 
 # nvm setup
 # something wrong, need NVM_DIR here
+export NVM_DIR="$HOME/.nvm"
 NVM_SETUP=$(cat <<-END
     export NVM_DIR="$HOME/.nvm"
     [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
