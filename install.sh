@@ -7,6 +7,7 @@ USAGE=$(cat <<-END
     OPTIONS:
         --tmux       install tmux
         --zsh        install zsh 
+        --nvm        install nvm 
 
     If OPTIONS are passed they will be installed
     with apt if on linux or brew if on OSX
@@ -15,8 +16,8 @@ END
 
 zsh=false
 tmux=false
-force=false
 nvm=false
+force=false
 while (( "$#" )); do
     case "$1" in
         -h|--help)
