@@ -133,3 +133,7 @@ alias lm='ls -al |more'   # pipe through 'more'
 alias lr='ls -lR'         # recursive ls
 alias tree='tree -Csu'    # nice alternative to 'recursive ls'
 
+#-------------------------------------------------------------
+# ffmpeg
+#-------------------------------------------------------------
+alias ffdata="ffprobe -hide_banner -loglevel error -show_error -show_format -show_streams -print_format json"
