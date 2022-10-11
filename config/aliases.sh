@@ -137,3 +137,4 @@ alias tree='tree -Csu'    # nice alternative to 'recursive ls'
 # ffmpeg
 #-------------------------------------------------------------
 alias ffdata="ffprobe -hide_banner -loglevel error -show_error -show_format -show_streams -print_format json"
+alias ffreal="ffmpeg -re -hide_banner -loglevel error -nostdin -i"
