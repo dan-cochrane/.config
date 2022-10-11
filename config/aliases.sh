@@ -6,7 +6,7 @@ alias cdg="cd ~/git"
 alias zrc="cd $DOT_DIR/zsh"
 alias dot="cd $DOT_DIR"
 alias jp="jupyter lab"
-alias vm="ssh -t danc@danc.dev-vms.speechmatics.io 'neofetch; zsh -l'"
+alias vm="ssh -t danc@danc.dev-vms.speechmatics.io 'zsh -l'"
 
 # -------------------------------------------------------------------
 # general
