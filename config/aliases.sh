@@ -37,7 +37,6 @@ alias dus='du -sckx * | sort -nr'
 # cd
 #-------------------------------------------------------------
 
-alias c='cd'
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
@@ -67,10 +66,11 @@ alias g="git"
 alias gcl="git clone"
 alias ga="git add"
 alias gaa="git add ."
+alias gb="git branch"
 alias gau="git add -u"
 alias gc="git commit -m"
 alias gp="git push"
-alias gpf="git push -f"
+alias gpf="git push --force-with-lease"
 
 alias gg='git gui'
 alias glog='git log --oneline --all --graph --decorate'
@@ -136,6 +136,7 @@ alias tree='tree -Csu'    # nice alternative to 'recursive ls'
 #-------------------------------------------------------------
 # ffmpeg
 #-------------------------------------------------------------
+
 alias ffdata="ffprobe -hide_banner -loglevel error -show_error -show_format -show_streams -print_format json"
 alias ffreal="ffmpeg -re -hide_banner -loglevel error -nostdin -i"
 alias ffstrip="ffmpeg -i input-video.avi -vn -acodec copy"
