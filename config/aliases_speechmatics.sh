@@ -1,9 +1,7 @@
 HOST_IP_ADDR=$(hostname -I | awk '{ print $1 }') # This gets the actual ip addr
-TENSOR_BOARD_SIF="oras://singularity-master.artifacts.speechmatics.io/tensorboard:20210213"
 
 # Quick navigation add more here
 alias a="cd ~/git/aladdin"
-alias a2="cd ~/git/aladdin2"
 alias cde="cd /exp/$(whoami)"
 alias cdt="cd ~/tb"
 alias cdn="cd ~/notebooks"
@@ -30,7 +28,6 @@ alias msa2="make -C /home/$(whoami)/git/aladdin2/ shell"
 
 # Activate aladdin SIF in current directory
 alias msad="/home/$(whoami)/git/aladdin/env/singularity.sh -c "$SHELL""
-alias msad2="/home/$(whoami)/git/aladdin2/env/singularity.sh -c "$SHELL""
 
 # Misc
 alias jp="jupyter lab --no-browser --ip $HOST_IP_ADDR --NotebookApp.token='123' --NotebookApp.password='123'"
@@ -48,10 +45,10 @@ alias mut="make unittest"
 
 ### Tensorboard
 
-alias tb="singularity exec $TENSOR_BOARD_SIF tensorboard --host=$HOST_IP_ADDR --reload_multifile true --logdir=."
+alias tb="tensorboard --host=$HOST_IP_ADDR --reload_multifile true --logdir=."
 tblink () {
-  # Creates simlinks from specified folders to ~/tb/x where x is an incrmenting number
-  # and luanches tensorboard
+  # Creates symlinks from specified folders to ~/tb/x where x is an incrmenting number
+  # and launches tensorboard
   # example: `tblink ./lm/20210824 ./lm/20210824_ablation ./lm/20210825_updated_data`
   if [ "$#" -eq 0 ]; then
     logdir=$(pwd)
@@ -187,7 +184,7 @@ qupdate () {
     [ ! -z $SINGULARITY_CONTAINER ] && ssh localhost "qupdate"|| command qupdate ;
 }
 
-# Only way to get a gpu is via queue
+# Only way to get a gpu is via queue. WARNING: this will hide GPUs if working locally
 if [ -z $CUDA_VISIBLE_DEVICES ]; then
   export CUDA_VISIBLE_DEVICES=
 fi
