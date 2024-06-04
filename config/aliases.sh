@@ -131,7 +131,7 @@ alias lu='ls -ltur'       # sort by and show access time, most recent last
 alias lt='ls -ltr'        # sort by date, most recent last
 alias lm='ls -al |more'   # pipe through 'more'
 alias lr='ls -lR'         # recursive ls
-alias tree='tree -Csu'    # nice alternative to 'recursive ls'
+alias tree='tree -C'   	  # nice alternative to 'recursive ls'
 
 #-------------------------------------------------------------
 # ffmpeg
