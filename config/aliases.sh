@@ -101,8 +101,8 @@ alias gsta="git stash apply"
 alias gstd="git stash drop"
 alias gstc="git stash clear"
 
-alias ggsup='git branch --set-upstream-to=origin/$(git_current_branch)'
-alias gpsup='git push --set-upstream origin $(git_current_branch)'
+alias ggsup='git branch --set-upstream-to=origin/$(git branch --current)'
+alias gpsup='git push --set-upstream origin $(git branch --current)'
 
 #-------------------------------------------------------------
 # tmux
