@@ -1,20 +1,18 @@
 #!/bin/bash
 set -euo pipefail
 USAGE=$(cat <<-END
-    Usage: ./deploy.sh [OPTIONS], eg. ./deploy.sh --local --vim
+    Usage: ./deploy.sh [OPTIONS], eg. ./deploy.sh --local
     Creates ~/.zshrc and ~/.tmux.conf with location
     specific config
 
     OPTIONS:
         --local                 deploy local config only, only common aliases are sourced
-        --vim                   deploy very simple vimrc config
 END
 )
 
 export DOT_DIR=$(dirname $(realpath $0))
 
 LOC="remote"
-VIM="false"
 while (( "$#" )); do
     case "$1" in
         -h|--help)

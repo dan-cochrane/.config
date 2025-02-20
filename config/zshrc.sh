@@ -1,5 +1,4 @@
 CONFIG_DIR=$(dirname $(realpath ${(%):-%x}))
-DOT_DIR=$CONFIG_DIR/../
 
 source ~/.zsh/powerlevel10k/powerlevel10k.zsh-theme
 source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

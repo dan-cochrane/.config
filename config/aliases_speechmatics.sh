@@ -3,28 +3,9 @@ HOST_IP_ADDR=$(hostname -I | awk '{ print $1 }') # This gets the actual ip addr
 # Quick navigation add more here
 alias a="cd ~/git/aladdin"
 alias cde="cd /exp/$(whoami)"
-alias cdt="cd ~/tb"
-alias cdn="cd ~/notebooks"
-
-# Perish machines
-alias p1="cd /perish_aml01"
-alias p2="cd /perish_aml02"
-alias p3="cd /perish_aml03"
-alias p4="cd /perish_aml04"
-alias p5="cd /perish_aml05"
-alias g1="cd /perish_g01"
-alias g2="cd /perish_g02"
-alias g3="cd /perish_g03"
-
-alias b1="ssh b1"
-alias b2="ssh b2"
-alias b3="ssh b3"
-alias b4="ssh b4"
-alias b5="ssh b5"
 
 # Change to aladdin directory and activate SIF
 alias msa="make -C /home/$(whoami)/git/aladdin/ shell"
-alias msa2="make -C /home/$(whoami)/git/aladdin2/ shell"
 
 # Activate aladdin SIF in current directory
 alias msad="/home/$(whoami)/git/aladdin/env/singularity.sh -c "$SHELL""
@@ -78,6 +59,7 @@ tblink () {
   echo "logdir: $logdir"
   singularity exec "$TENSOR_BOARD_SIF" tensorboard --host=$HOST_IP_ADDR --reload_multifile true --logdir=$logdir
 }
+
 tbadd() {
   # Add experiment folder to existing tensorboard directory (see tblink)
   # example: `tbadd ./lm/20210825 25` will symlink ./lm/20210824 to ~/tb/25
@@ -128,21 +110,26 @@ qlogin () {
     echo "Usage: qlogin <num_slots> cpu" >&2
   fi
 }
+
 qtail () {
-  tail -f $(qlog $@)
+  tail -f $(qlog "$@")
 }
+
 qlast () {
   # Tail the last running job
   job_id=$(qstat | awk '$5=="r" {print $1}' | grep -E '[0-9]' | sort -r | head -n 1)
   echo "qtail of most recent job ${job_id}"
   qtail ${job_id} 
 }
+
 qless () {
-  less $(qlog $@)
+  less $(qlog "$@")
 }
+
 qcat () {
-  cat $(qlog $@)
+  cat $(qlog "$@")
 }
+
 qlog () {
   # Get log path of job
   if [ "$#" -eq 1 ]; then
@@ -177,11 +164,11 @@ qdesc () {
 }
 
 qrecycle () {
-    [ ! -z $SINGULARITY_CONTAINER ] && ssh localhost "qrecycle $@" || command qrecycle "$@";
+    [ -n  "$SINGULARITY_CONTAINER" ] && ssh localhost "qrecycle"  "$@" || command qrecycle "$@";
 }
 
 qupdate () {
-    [ ! -z $SINGULARITY_CONTAINER ] && ssh localhost "qupdate"|| command qupdate ;
+    [ -n "$SINGULARITY_CONTAINER" ] && ssh localhost "qupdate"|| command qupdate ;
 }
 
 # Only way to get a gpu is via queue. WARNING: this will hide GPUs if working locally

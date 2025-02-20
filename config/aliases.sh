@@ -3,7 +3,6 @@
 # -------------------------------------------------------------------
 
 alias cdg="cd ~/git"
-alias zrc="cd $DOT_DIR/zsh"
 alias dot="cd $DOT_DIR"
 alias jp="jupyter lab"
 alias vm="ssh danc@danc.dev-vms.speechmatics.io"
@@ -15,7 +14,6 @@ alias vm="ssh danc@danc.dev-vms.speechmatics.io"
 alias cl="clear"
 
 # file and directories
-alias rmd='rm -rf'
 alias cp='cp -i'
 alias mv='mv -i'
 alias mkdir='mkdir -p'
