@@ -14,11 +14,11 @@ setopt HIST_FIND_NO_DUPS         # Do not display a line previously found.
 setopt completealiases
 setopt always_to_end
 setopt list_ambiguous
+setopt inc_append_history
 export HISTSIZE=100000 # big big history
 export HISTFILESIZE=100000 # big big history
 unsetopt hup
 unsetopt list_beep
-skip_global_compinit=1
 zstyle ':completion:*' hosts off
 
 # Set Up and Down arrow keys to the (zsh-)history-substring-search plugin
