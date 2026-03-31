@@ -1,28 +1,9 @@
 ## Dotfile management
 - Write shell scripts for configs (tmux, zshrc, etc)
 - Write set-up script for sourcing shell script to relevant dotfile
-- Install/deploy scripts to run the set-up scripts and install nvim
+- Install/deploy scripts to run the set-up scripts
 - Symlink the sm-dotfiles repo into the .configs file
-    - need to only Symlink the non-tmux and nvim configs
-
-## nvim
-
-### lsp
-
-gd - go to definition \
-gD - go to global declaration \
-gi - get implementation \
-gl - get line diagnostics \
-gr - go to references \
-]d - go to next diagnostic
-
-### nvim-lsp-installer
-
-enter - expand server \
-i - install server \
-u - update server \
-U - update all servers \
-X - uninstall server 
+    - need to only Symlink the non-tmux configs
 
 ## tmux
 
@@ -38,7 +19,7 @@ w - menu with all windows \
 
 ### pane commands
 
-Note I don't move with ctrl + vim, it interferes with my neovim buffers/explorer
+Note I don't move with ctrl + vim
 
 | - split vertically \
 \- - split horizontally \
