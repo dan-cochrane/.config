@@ -88,7 +88,7 @@ alias gs="git status"
 
 alias gco="git checkout"
 alias gcb="git checkout -b"
-alias gcm="git checkout master"
+gcm() { git checkout "$(git symbolic-ref refs/remotes/origin/HEAD 2>/dev/null | sed 's|refs/remotes/origin/||' || echo master)"; }
 
 alias grhead="git reset HEAD^"
 alias grhard="git fetch origin && git reset --hard"
