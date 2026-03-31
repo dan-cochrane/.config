@@ -171,8 +171,8 @@ qupdate () {
     [ -n "$SINGULARITY_CONTAINER" ] && ssh localhost "qupdate"|| command qupdate ;
 }
 
-# Only way to get a gpu is via queue. WARNING: this will hide GPUs if working locally
-if [ -z $CUDA_VISIBLE_DEVICES ]; then
+# Hide GPUs for bare SSH sessions — GPU access must go via the queue
+if [ -n "$SSH_CONNECTION" ] && [ -z "$JOB_ID" ] && [ -z "$CUDA_VISIBLE_DEVICES" ]; then
   export CUDA_VISIBLE_DEVICES=
 fi
 
