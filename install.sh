@@ -86,8 +86,11 @@ else
         ${ZSH:-~/.zsh}/zsh-completions 
 
     git clone https://github.com/zsh-users/zsh-history-substring-search \
-        ${ZSH:-~/.zsh}/zsh-history-substring-search 
-    
+        ${ZSH:-~/.zsh}/zsh-history-substring-search
+
+    git clone https://github.com/MichaelAquilina/zsh-you-should-use \
+        ${ZSH:-~/.zsh}/zsh-you-should-use
+
     echo " --------- INSTALLED SUCCESSFULLY ✅ ----------- "
     echo " --------- NOW RUN ./deploy.sh [OPTION] -------- "
 fi

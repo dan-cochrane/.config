@@ -5,6 +5,7 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.zsh/zsh-completions/zsh-completions.plugin.zsh
+source ~/.zsh/zsh-you-should-use/you-should-use.plugin.zsh
 
 source $CONFIG_DIR/aliases.sh
 source $CONFIG_DIR/p10k.zsh
